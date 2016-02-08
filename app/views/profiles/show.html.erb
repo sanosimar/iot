@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @profile.user_id %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @profile.name %>
+</p>
+
+<p>
+  <strong>Email confirmed:</strong>
+  <%= @profile.email_confirmed %>
+</p>
+
+<p>
+  <strong>Bithday:</strong>
+  <%= @profile.bithday %>
+</p>
+
+<p>
+  <strong>Bio:</strong>
+  <%= @profile.bio %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @profile.color %>
+</p>
+
+<p>
+  <strong>Image url:</strong>
+  <%= @profile.image_url %>
+</p>
+
+<p>
+  <strong>Subscription:</strong>
+  <%= @profile.subscription %>
+</p>
+
+<p>
+  <strong>Social network:</strong>
+  <%= @profile.social_network %>
+</p>
+
+<%= link_to 'Edit', edit_profile_path(@profile) %> |
+<%= link_to 'Back', profiles_path %>

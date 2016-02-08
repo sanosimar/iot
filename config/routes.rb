@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :profiles
+  resources :users
   root :to => "home#index"
 
   resources :components
