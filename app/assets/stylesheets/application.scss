@@ -16,6 +16,13 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.navbar-inverse {
+  background: #273b47;
+  color: #fff;
+}
+
+
+
 
 .LandingPlanCareer {
   display: inline-block;
@@ -25,7 +32,7 @@
   text-align: center;
   padding-bottom: 10px
 }
-.LandingPlanCareerFree{
+.center_div{
   width: 100%;
   text-align: center;
 }
@@ -152,4 +159,14 @@
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+footer{
+  padding-top: 20px;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:60px;   /* Height of the footer */
+  background: #273b47;
+  color: #fff;
 }
