@@ -20,7 +20,9 @@
   background: #273b47;
   color: #fff;
 }
-
+.jumbotron{
+  background-image: image-url("iot_image.png");
+}
 
 
 
@@ -67,6 +69,14 @@
 }
 .color-gold{
   background: #FFD700;
+}
+.jumbotron h1, .jumbotron .h1 {
+  color: #98ca3f;
+  font-weight: bold;
+}
+.jumbotron .container {
+  background: rgba(0,0,0,0.5);
+  color: white;
 }
 .LandingPlanCareer-type {
   font-size: 26px;
@@ -162,6 +172,7 @@
 }
 
 footer{
+  margin-top: 50px;
   padding-top: 20px;
   position:fixed;
   bottom:0;
