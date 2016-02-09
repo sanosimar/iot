@@ -1,3 +1,46 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.container .planContainer{
+  background:#98ca3f;
+  color:#fff;
+  padding:18px 0;
+}
+
+.LandingPlanCareer-bigger .LandingPlanCareer-price{
+  background:#98ca3f;
+  color:#fff;
+  padding:18px 0;
+}
+.LandingPlanCareer-currency{
+  font-size:55px;
+  line-height:55px;
+  font-weight:700;
+  -webkit-font-smoothing: default;
+}
+.LandingPlanCareer-label{
+  margin-top:5px;
+  display:block;
+  font-size:16px;
+  font-weight:700;
+}
+
+.LandingPlanCareer-list{
+  padding:30px 60px 35px 22px;
+  list-style:none;
+  text-align:left;
+}
+
+.LandingPlanCareer-item{
+  display:-webkit-box;
+  display:-moz-box;
+  display:-webkit-flex;
+  display:-ms-flexbox;
+  display:flex;
+  margin-top:6px;
+  margin-bottom:16px;
+}
+.LandingPlanCareer-benefits{
+  padding-left:12px;
+}

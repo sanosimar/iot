@@ -1,4 +1,4 @@
-<%= form_for(@profile) do |f| %>
+<%= form_for(@profile, html: {class: 'form-signin'}) do |f| %>
   <% if @profile.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
@@ -11,43 +11,43 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= f.label :user_id %><br>
-    <%= f.number_field :user_id %>
+    <%= f.number_field :user_id,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :email_confirmed %><br>
-    <%= f.check_box :email_confirmed %>
+    <%= f.check_box :email_confirmed,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :bithday %><br>
-    <%= f.date_select :bithday %>
+    <%= f.date_select :bithday,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :bio %><br>
-    <%= f.text_area :bio %>
+    <%= f.text_area :bio,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :color %><br>
-    <%= f.text_field :color %>
+    <%= f.color_field :color,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :image_url %><br>
-    <%= f.text_field :image_url %>
+    <%= f.text_field :image_url,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :subscription %><br>
-    <%= f.text_field :subscription %>
+    <%= f.text_field :subscription,:class => "form-control" %>
   </div>
-  <div class="field">
+  <div class="form-group">
     <%= f.label :social_network %><br>
-    <%= f.text_field :social_network %>
+    <%= f.text_field :social_network,:class => "form-control" %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <div class="actions form-group ">
+      <%= f.submit :class => 'btn btn-primary' %>
+    </div>
 <% end %>
