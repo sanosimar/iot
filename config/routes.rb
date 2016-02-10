@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :profiles
   resources :users
+  resources :profiles
   resources :components
 
   root :to => 'home#index'
 
-  get '/signin' => 'users#signin'
+  get '/signup' => 'users#new'
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

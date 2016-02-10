@@ -9,6 +9,7 @@
 <body>
 
   <nav class="navbar navbar-inverse">
+
     <div class="container">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -19,22 +20,18 @@
         </button>
         <%= link_to "Intertic", {:controller => :home, :action => :index },:class => "navbar-brand" %>
       </div>
-      <div id="navbar" class="navbar-collapse collapse">
+      <div id="navbar" class="navbar-right navbar-collapse collapse">
 
-        <%= link_to "Singup",{ :controller => :users, :action => :new }, :class => "navbar-right btn btn-primary navbar-btn" %>
 
-        <%= form_tag({controller: "sessions", action: "create"}, method: "post", class: "navbar-form navbar-right") do %>
-        <!-- form_for(@users, :url => {:controller => 'sessions', :action => 'new'}, :html => {:class => "navbar-form navbar-right"}) do |f| -->
-        <!-- form_for @user, url: { controller: 'sessions', action: 'new'}, html: { class: 'navbar-form navbar-right'} do |f| -->
-            <div class="form-group">
-              <%= email_field_tag(name = "email", value = nil, options = {placeholder: 'Email', class: "form-control"}) %>
-            </div>
-            <div class="form-group">
-              <%= password_field_tag(name = "password", value = nil, options = { placeholder: 'Password', class: "form-control"})  %>
-            </div>
-            <%= submit_tag "Login", class: "btn btn-success" %>
-        <% end %>
-
+        <div id="user_header">
+          <% if current_user %>
+              Logged in as <%= current_user.email %>.
+              <%= link_to "Log Out",{ :controller => :sessions, :action => :destroy }, :class => "btn btn-danger navbar-btn" %>
+          <% else %>
+              <%= link_to "Log in",{ :controller => :sessions, :action => :new }, :class => "btn btn-primary navbar-btn" %>
+              <%= link_to "Sing up",{ :controller => :users, :action => :new }, :class => " btn btn-success navbar-btn" %>
+          <% end %>
+        </div>
       </div>
     </div>
   </nav>
