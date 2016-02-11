@@ -3,4 +3,3 @@ class AddColumnSubscriptionIdToProfileReal < ActiveRecord::Migration
     add_column :profiles, :subscription_id, :integer
   end
 end
-rails

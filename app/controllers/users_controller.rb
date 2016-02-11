@@ -24,13 +24,16 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(:email => user_params[:email],:password => user_params[:password])
+    @user = User.new(:email => user_params[:email],
+                     :password => user_params[:password])
 
     respond_to do |format|
       if @user.save
         format.html {
           session[:user_id] = @user.id
-          @profile = Profile.new(:user_id => @user.id, :name => params[:name], :subscription_id => params[:subscription_id])
+          @profile = Profile.new(:user_id => @user.id,
+                                 :name => params[:name],
+                                 :subscription_id => params[:subscription_id])
           if @profile.save
             format.html { redirect_to root_url, notice: 'User was successfully created.' }
           else

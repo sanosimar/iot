@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :group_components
   resources :subscriptions
   resources :prices
   resources :users
