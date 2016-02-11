@@ -30,7 +30,7 @@ class UsersController < ApplicationController
       if @user.save
         format.html {
           session[:user_id] = @user.id
-          @profile = Profile.new(:user_id => @user.id, :name => params[:name])
+          @profile = Profile.new(:user_id => @user.id, :name => params[:name], :subscription_id => params[:subscription_id])
           if @profile.save
             format.html { redirect_to root_url, notice: 'User was successfully created.' }
           else
@@ -82,6 +82,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :name)
+      params.require(:user).permit(:email, :password, :password_confirmation, :name, :subscription_id)
     end
 end

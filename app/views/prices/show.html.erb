@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @price.name %>
+</p>
+
+<p>
+  <strong>Name with price:</strong>
+  <%= @price.name_with_price %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @price.value %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @price.currency %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @price.color %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @price.group %>
+</p>
+
+<p>
+  <strong>Enable:</strong>
+  <%= @price.enable %>
+</p>
+
+<%= link_to 'Edit', edit_price_path(@price), :class => "btn btn-primary" %> |
+<%= link_to 'Back', prices_path, :class => "btn btn-danger" %>

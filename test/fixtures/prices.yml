@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  name_with_price: MyString
+  value: 9.99
+  currency: MyString
+  color: MyString
+  group: MyString
+  enable: false
+
+two:
+  name: MyString
+  name_with_price: MyString
+  value: 9.99
+  currency: MyString
+  color: MyString
+  group: MyString
+  enable: false

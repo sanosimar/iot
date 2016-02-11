@@ -28,7 +28,11 @@
         <td><%= profile.bio %></td>
         <td><%= profile.color %></td>
         <td><%= profile.image_url %></td>
-        <td><%= profile.subscription %></td>
+        <td>
+          <% if profile.subscription %>
+                  <%= profile.subscription.name_with_price %>
+          <% end %>
+        </td>
         <td><%= profile.social_network %></td>
         <td><%= link_to 'Show', profile, :class => "btn btn-primary" %></td>
         <td><%= link_to 'Edit', edit_profile_path(profile), :class => "btn btn-primary" %></td>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @subscription.name %>
+</p>
+
+<p>
+  <strong>Name with price:</strong>
+  <%= @subscription.name_with_price %>
+</p>
+
+<p>
+  <strong>Value:</strong>
+  <%= @subscription.value %>
+</p>
+
+<p>
+  <strong>Currency:</strong>
+  <%= @subscription.currency %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @subscription.color %>
+</p>
+
+<p>
+  <strong>Group:</strong>
+  <%= @subscription.group %>
+</p>
+
+<p>
+  <strong>Enable:</strong>
+  <%= @subscription.enable %>
+</p>
+
+<%= link_to 'Edit', edit_subscription_path(@subscription), :class => "btn btn-primary" %> |
+<%= link_to 'Back', subscriptions_path, :class => "btn btn-danger" %>

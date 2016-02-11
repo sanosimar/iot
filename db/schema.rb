@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160210194736) do
+ActiveRecord::Schema.define(version: 20160211190314) do
 
   create_table "components", force: :cascade do |t|
     t.string   "name"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(version: 20160210194736) do
     t.datetime "updated_at",     null: false
   end
 
+  create_table "prices", force: :cascade do |t|
+    t.string   "name"
+    t.string   "name_with_price"
+    t.decimal  "value"
+    t.string   "currency"
+    t.string   "color"
+    t.string   "group"
+    t.boolean  "enable"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "name"
@@ -34,6 +46,19 @@ ActiveRecord::Schema.define(version: 20160210194736) do
     t.string   "image_url"
     t.string   "subscription"
     t.string   "social_network"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.integer  "subscription_id"
+  end
+
+  create_table "subscriptions", force: :cascade do |t|
+    t.string   "name"
+    t.string   "name_with_price"
+    t.decimal  "value"
+    t.string   "currency"
+    t.string   "color"
+    t.string   "group"
+    t.boolean  "enable"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
