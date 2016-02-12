@@ -4,7 +4,7 @@ class GroupComponentsController < ApplicationController
   # GET /group_components
   # GET /group_components.json
   def index
-    @group_components = GroupComponent.all
+    @group_components = GroupComponent.all.where( :user_id => current_user.id )
   end
 
   # GET /group_components/1

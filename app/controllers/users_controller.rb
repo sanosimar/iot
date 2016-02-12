@@ -35,15 +35,18 @@ class UsersController < ApplicationController
                                  :name => params[:name],
                                  :subscription_id => params[:subscription_id])
           if @profile.save
-            format.html { redirect_to root_url, notice: 'User was successfully created.' }
+            @estado= "profile saved"
           else
-            format.html {
               @profile = Profile.new(:id_user => @user.id, :name => "" )
               @profile.save
-              redirect_to root_url, notice: 'User was successfully created.'
-            }
           end
-          redirect_to root_url, notice: 'User was successfully created.'
+
+          @group_component = GroupComponent.new(:user_id => @user.id,
+                                                :name => "Default",
+                                                :description => "this is a group component default for free account",
+                                                :enable => 1)
+          @group_component.save
+          redirect_to root_url, notice: 'Profile was successfully created.'
         }
         format.json { render :show, status: :created, location: @user }
       else
