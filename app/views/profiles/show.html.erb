@@ -10,13 +10,16 @@
       <div class="col-md-7">
         <h3><%= @profile.username %></h3> <small><%= @profile.subscription.name %></small>
         <h5><%= @profile.user.email %></h5>
-        <p> <small><%= @profile.bio %></small></p>
+        <blockquote class="my-quotes">
+          <h3><small class="letra-color-blanco"><span class="comilla"></span><%= @profile.bio %><span class="comilla-cerrar"></span></small></h3>
+        </blockquote>
+        <hr>
         <div class="social-network"> Google - Facebook - Twitter</div>
       </div>
       <div class="col-md-2">
-        <a href="" class="btn btn-warning">
-          <span class="glyphicon glyphicon-edit" aria-hidden="true">
-          </span> &nbsp Edit</a>
+        <%= link_to({ :controller => :profiles, :action => :edit }, :class => "btn btn-warning") do %>
+            <%= content_tag :span, " Edit", :class => "glyphicon glyphicon-edit" %>
+        <% end%>
       </div>
     </div>
   </div>
@@ -26,56 +29,6 @@
   <li role="presentation" class="active"><a href="#">Components <span class="badge">42</span></a></li>
   <li role="presentation" class="active"><a href="#">Group Components <span class="badge">42</span></a></li>
   <li role="presentation" class="active"><a href="#">Changes states per day <span class="badge">42</span></a></li>
+  <li role="presentation" class="active"><a href="#">stadistic <span class="badge">42</span></a></li>
 </ul>
-number_components
-number_groups
-number_change_states
 
-
-<p>
-  <strong>User:</strong>
-  <%= @profile.user_id %>
-</p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @profile.username %>
-</p>
-
-<p>
-  <strong>Email confirmed:</strong>
-  <%= @profile.email_confirmed %>
-</p>
-
-<p>
-  <strong>Bithday:</strong>
-  <%= @profile.bithday %>
-</p>
-
-<p>
-  <strong>Bio:</strong>
-  <%= @profile.bio %>
-</p>
-
-<p>
-  <strong>Color:</strong>
-  <%= @profile.color %>
-</p>
-
-<p>
-  <strong>Image url:</strong>
-  <%= @profile.image_url %>
-</p>
-
-<p>
-  <strong>Subscription:</strong>
-  <%= @profile.subscription %>
-</p>
-
-<p>
-  <strong>Social network:</strong>
-  <%= @profile.social_network %>
-</p>
-
-<%= link_to 'Edit', edit_profile_path(@profile), :class => "btn btn-success" %> |
-<%= link_to 'Back', profiles_path, :class => "btn btn-danger" %>

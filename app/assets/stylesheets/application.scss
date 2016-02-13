@@ -194,8 +194,39 @@ footer{
 .letra-color-negro{
   color: black;
 }
-
+.letra-color-blanco{
+  color: white;
+}
 .poniendo-padding{
   padding-bottom: 40px;
   padding-top: 20px;
+}
+.my-quotes {
+  border:none;
+  margin-bottom:-30px;
+  position: relative;
+  max-width: 350px;
+  margin: 0 auto;
+  padding-left: 0.4em;
+}
+
+.my-quotes h3 {
+  font-size:18px;
+}
+
+.my-quotes h3:before {
+  content: "\201C";
+  font-size:60px;
+  color:#889c0b;
+  position: absolute;
+  top: -0.2em;
+  left: -0.3em;
+}
+.my-quotes h3:after {
+  content: "\201D";
+  font-size:60px;
+  color:#889c0b;
+  position: absolute;
+  bottom: -0.6em;
+  right: 0.6em;
 }
