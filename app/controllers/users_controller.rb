@@ -32,17 +32,17 @@ class UsersController < ApplicationController
         format.html {
           session[:user_id] = @user.id
           @profile = Profile.new(:user_id => @user.id,
-                                 :name => params[:name],
+                                 :username => params[:username],
                                  :subscription_id => params[:subscription_id])
           if @profile.save
             @estado= "profile saved"
           else
-              @profile = Profile.new(:id_user => @user.id, :name => "" )
+              @profile = Profile.new(:id_user => @user.id, :username => "" )
               @profile.save
           end
 
           @group_component = GroupComponent.new(:user_id => @user.id,
-                                                :name => "Default",
+                                                :username => "Default",
                                                 :description => "this is a group component default for free account",
                                                 :enable => 1)
           @group_component.save
@@ -88,6 +88,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation, :name, :subscription_id)
+      params.require(:user).permit(:email, :password, :password_confirmation, :username, :subscription_id)
     end
 end

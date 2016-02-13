@@ -4,7 +4,7 @@ class ComponentsController < ApplicationController
   # GET /components
   # GET /components.json
   def index
-    @components = Component.all
+    @components = Component.all.where(:user_id => current_user.id)
   end
 
   # GET /components/1
@@ -24,7 +24,14 @@ class ComponentsController < ApplicationController
   # POST /components
   # POST /components.json
   def create
-    @component = Component.new(component_params)
+    @component = Component.new(:user_id => current_user.id,
+                               :group_component_id => component_params[:group_component_id],
+                               :name => component_params[:name],
+                               :code => component_params[:code],
+                               :value => component_params[:value],
+                               :value_max => component_params[:value_max],
+                               :value_min => component_params[:value_min],
+                               :date_published => component_params[:date_published])
 
     respond_to do |format|
       if @component.save
@@ -69,6 +76,6 @@ class ComponentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def component_params
-      params.require(:component).permit(:name, :code, :value, :value_max, :value_min, :date_published)
+      params.require(:component).permit(:group_component_id,:name, :code, :value, :value_max, :value_min, :date_published)
     end
 end

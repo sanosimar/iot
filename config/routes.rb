@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   root :to => 'home#index'
 
   get '/signup' => 'users#new'
+  get '/i_:username', to: 'profiles#show', as: :username
 
   get '/login' => 'sessions#new'
   post '/login' => 'sessions#create'

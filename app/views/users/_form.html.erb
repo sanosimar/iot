@@ -12,12 +12,12 @@
   <% end %>
 
   <div class="form-group">
-    <%= f.label :email %><br>
-    <%= f.text_field :email,:class => "form-control" %>
+    <%= label_tag :email %><br>
+    <%= email_field_tag :email, value=nil, option = {:class => "form-control"} %>
   </div>
   <div class="form-group">
-    <%= label_tag(:name )%><br>
-    <%= text_field_tag(:name, value=nil, option = {class: "form-control"}) %>
+    <%= label_tag(:username )%><br>
+    <%= text_field_tag(:username, value=nil, option = {class: "form-control"}) %>
   </div>
   <div class="form-group">
     <%= f.label :password %><br>

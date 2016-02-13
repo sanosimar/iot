@@ -1,4 +1,36 @@
-<p id="notice"><%= notice %></p>
+<div class="jumbotron">
+  <div class="container poniendo-padding">
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/200" class="avatar img-circle" alt="avatar">
+        </div>
+      </div>
+      <div class="col-md-7">
+        <h3><%= @profile.username %></h3> <small><%= @profile.subscription.name %></small>
+        <h5><%= @profile.user.email %></h5>
+        <p> <small><%= @profile.bio %></small></p>
+        <div class="social-network"> Google - Facebook - Twitter</div>
+      </div>
+      <div class="col-md-2">
+        <a href="" class="btn btn-warning">
+          <span class="glyphicon glyphicon-edit" aria-hidden="true">
+          </span> &nbsp Edit</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<ul class="nav nav-pills" role="tablist">
+  <li role="presentation" class="active"><a href="#">Components <span class="badge">42</span></a></li>
+  <li role="presentation" class="active"><a href="#">Group Components <span class="badge">42</span></a></li>
+  <li role="presentation" class="active"><a href="#">Changes states per day <span class="badge">42</span></a></li>
+</ul>
+number_components
+number_groups
+number_change_states
+
 
 <p>
   <strong>User:</strong>
@@ -7,7 +39,7 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @profile.name %>
+  <%= @profile.username %>
 </p>
 
 <p>

@@ -29,23 +29,27 @@
               <ul class="nav navbar-nav navbar-inverse">
                 <li><%= link_to "Components",{ :controller => :components, :action => :index } %></li>
                 <li><%= link_to "Groups",{ :controller => :group_components, :action => :index } %></li>
-                <li><%= link_to "Users",{ :controller => :users, :action => :index } %></li>
+                <li><%= link_to "Users",{ :controller => :users, :action => :index } do %>
+                      <%= content_tag :span, " Users", :class => "glyphicon glyphicon-user" %>
+                  <% end%>
+                </li>
+                <li><%= link_to "Profiles",{ :controller => :profiles, :action => :index } %></li>
                 <li>
                   <%= form_tag({controller: "home", action: "index"}, method: "get", class: "navbar-form", role: "search") do%>
                     <div class="form-group">
                       <%= text_field_tag 'search', nil, placeholder: 'Search',:class => "letra-color-negro" %>
                     </div>
-                    <%= submit_tag "Buscar",:class => "btn btn-warning" %>
+                    <%= submit_tag "Search",:class => "btn btn-warning" %>
                   <% end %>
                 </li>
                 <li class="dropdown">
                   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                     <img src="http://placehold.it/30x30" class="reducir img-circle">
-                    &nbsp<%= current_user.profile.name %>
+                    &nbsp<%= current_user.profile.username %>
                     <span class="caret"></span>
                   </a>
                   <ul class="dropdown-menu">
-                    <li><%= link_to "My Profile",{ :controller => :profiles, :action => :index } %></li>
+                    <li><%= link_to "My Profile","/i_"+current_user.profile.username%></li>
                     <li><%= link_to "My Subscription",{ :controller => :subscriptions, :action => :index } %></li>
                     <li><%= link_to "Contact Support",{ :controller => :profiles, :action => :index } %></li>
                     <li><%= link_to "Direct Messages",{ :controller => :profiles, :action => :index } %></li>

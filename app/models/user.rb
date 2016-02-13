@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_one :profile
   has_many :group_components
+  has_many :components
 
   validates_presence_of :email,:password_digest
 
