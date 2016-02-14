@@ -29,7 +29,7 @@
               <ul class="nav navbar-nav navbar-inverse">
                 <li><%= link_to "Components",{ :controller => :components, :action => :index } %></li>
                 <li><%= link_to "Groups",{ :controller => :group_components, :action => :index } %></li>
-                <li><%= link_to "Users",{ :controller => :users, :action => :index } do %>
+                <li><%= link_to ({ :controller => :users, :action => :index }) do %>
                       <%= content_tag :span, " Users", :class => "glyphicon glyphicon-user" %>
                   <% end%>
                 </li>

@@ -8,7 +8,8 @@
         </div>
       </div>
       <div class="col-md-7">
-        <h3><%= @profile.username %></h3> <small><%= @profile.subscription.name %></small>
+        <h2><%= @profile.username %> <small class="letra-color-blanco"> < <%= @profile.last_name.capitalize %> <%=@profile.first_name.capitalize %> > </small></h2>
+        <small><%= @profile.subscription.name %></small>
         <h5><%= @profile.user.email %></h5>
         <blockquote class="my-quotes">
           <h3><small class="letra-color-blanco"><span class="comilla"></span><%= @profile.bio %><span class="comilla-cerrar"></span></small></h3>
@@ -25,10 +26,12 @@
   </div>
 </div>
 
-<ul class="nav nav-pills" role="tablist">
-  <li role="presentation" class="active"><a href="#">Components <span class="badge">42</span></a></li>
-  <li role="presentation" class="active"><a href="#">Group Components <span class="badge">42</span></a></li>
-  <li role="presentation" class="active"><a href="#">Changes states per day <span class="badge">42</span></a></li>
-  <li role="presentation" class="active"><a href="#">stadistic <span class="badge">42</span></a></li>
-</ul>
+<div class="nav nav-pills row" >
+  <div class="col-xs-6 col-sm-3 active"><a href="#" class="btn btn-success letra-color-blanco llenado-boton"><span class="badge"><%= @profile.user.components.count %></span> Components</a></div>
+  <div class="col-xs-6 col-sm-3 active"><a href="#" class="btn btn-success letra-color-blanco llenado-boton"><span class="badge"><%= @profile.user.group_components.count %></span> Group Components</a></div>
+  <div class="clearfix visible-xs-block"></div>
+  <div class="col-xs-6 col-sm-3 active"><a href="#" class="btn btn-success letra-color-blanco llenado-boton"><span class="badge">42</span> Changes states per day</a></div>
+  <div class="col-xs-6 col-sm-3 active"><a href="#" class="btn btn-success letra-color-blanco llenado-boton"><span class="badge">42</span> stadistic</a></div>
+</div>
+<br>
 
